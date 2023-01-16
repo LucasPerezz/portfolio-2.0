@@ -1,8 +1,9 @@
 import React from 'react'
+import { Link } from 'react-router-dom'
 
 const Proyect = ({data}) => {
   return (
-    <div className='w-4/5 lg:w-full bg-gray-900 rounded-lg p-3 my-auto shadow-xl hover:scale-[1.03] hover:duration-500 hover:shadow-[#2675FF]'>
+    <div className='w-4/5 lg:w-full bg-gray-900 rounded-lg p-3 my-auto shadow-xl hover:scale-[1.03] hover:duration-500 hover:shadow-[#2675FF]' id='proyects'>
         <div className='flex flex-col'>
           <img src={data.image} alt="" className='w-full object-contain rounded-md' />
           <div>
@@ -16,9 +17,9 @@ const Proyect = ({data}) => {
                 })
               }
             </div>
-            <div className='grid grid-cols-2 w-full md:w-3/4 mx-auto gap-2 lg:gap-8 my-5'>
-              <button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>Github</button>
-              <button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>WebSite</button>
+            <div className='grid grid-cols-2 w-10/12 md:w-3/4 mx-auto gap-2 lg:gap-8 my-5'>
+            <Link to={data.github}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>Github</button></Link>
+              <Link to={data.url}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>WebSite</button></Link>
             </div>
           </div>
         </div>

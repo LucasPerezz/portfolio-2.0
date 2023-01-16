@@ -1,18 +1,17 @@
 import './App.css';
-import Navbar from './components/Navbar/Navbar';
-import Presentation from './components/Presentation/Presentation';
-import Portfolio from './components/Portfolio/Portfolio';
-import Skills from './components/Skills/Skills';
+import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Home from './components/Home';
+
 
 
 function App() {
   return (
     <>
-    {/* <NavbarDesk /> */}
-    <Navbar />
-      <Presentation />
-      <Skills />
-      <Portfolio />
+    <Router>
+      <Routes>
+          <Route path='/' element={<Home />} />
+      </Routes>
+    </Router>
     </>
   );
 }

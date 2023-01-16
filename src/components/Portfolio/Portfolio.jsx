@@ -46,7 +46,7 @@ const Portfolio = () => {
 
   return (
     <div className='min-h-screen relative max-h-max'>
-        <div className='min-h-screen container mx-auto my-auto flex flex-col justify-center'>
+        <div className='min-h-screen container mx-auto my-auto flex flex-col justify-center mb-60'>
             <h2 className='text-center text- font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2675FF] animate-pulse mb-16'>Portfolio</h2>
             <div className='flex flex-col justify-center items-center gap-10 md:grid md:grid-cols-2 xl:grid-cols-3 container min-h-max'>
                 {works.map((work) => {

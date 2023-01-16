@@ -41,8 +41,8 @@ const Skills = () => {
   ];
 
   return (
-    <div className="min-h-screen relative">
-        <div className="min-h-screen container mx-auto my-auto flex flex-col justify-center">
+    <div className="min-h-screen relative" id="skills">
+        <div className="min-h-screen container mx-auto my-auto flex flex-col justify-center mb-20">
       <h2 className="text-center text- font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2675FF] animate-pulse mb-16 ">
         SKILLS
       </h2>
