@@ -39,6 +39,22 @@ const Skills = () => {
     {
         image: "https://i.ibb.co/KXQLD1j/kisspng-react-javascript-angularjs-ionic-atom-5b154be6947457-3471941815281223426081.png",
         language: "React.js"
+    },
+    {
+      image: "https://i.ibb.co/P1d7jSw/mongodb-original-wordmark-logo-icon-146425.png",
+      language: "MongoDB"
+    },
+    {
+      image: "https://i.ibb.co/YfDQNyq/Expressjs.png",
+      languaje: "Express.Js"
+    },
+    {
+      image: "https://i.ibb.co/xS7C56B/1200px-Node-js-logo-svg.png",
+      language: "Node.Js"
+    },
+    {
+      image: "https://i.ibb.co/zmkrMx7/typescript-original-logo-icon-146317.png",
+      languaje: "TypeScript"
     }
   ];
 
@@ -53,7 +69,7 @@ const Skills = () => {
       <motion.div 
             initial={ inView ? { opacity: 0, scale: 0.5 } : {opacity: 0, scale: 0}}
             animate={ inView ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0}}
-            transition={ inView ? { duration: 1.4} : {duration: 0}}
+            transition={ inView ? { duration: 1} : {duration: 0}}
           >
         <div className="min-h-screen container mx-auto my-auto flex flex-col justify-center mb-20">
       <h2 className="text-center text- font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2675FF] animate-pulse mb-16 ">
