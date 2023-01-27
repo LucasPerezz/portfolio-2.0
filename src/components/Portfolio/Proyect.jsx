@@ -1,5 +1,4 @@
 import React from 'react'
-import { Link } from 'react-router-dom'
 
 const Proyect = ({data}) => {
   return (
@@ -18,8 +17,8 @@ const Proyect = ({data}) => {
               }
             </div>
             <div className='grid grid-cols-2 w-10/12 md:w-3/4 mx-auto gap-2 lg:gap-8 my-5'>
-            <Link to={data.github}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>Github</button></Link>
-              <Link to={data.url}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>WebSite</button></Link>
+            <a href={data.github}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>Github</button></a>
+            <a href={data.url}><button className='border-[#2675FF] border text-white bg-transparent p-2 w-full rounded-lg hover:bg-[#2675FF]'>WebSite</button></a>
             </div>
           </div>
         </div>
