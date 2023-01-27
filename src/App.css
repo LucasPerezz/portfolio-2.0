@@ -1,3 +1,7 @@
+html {
+  scroll-behavior: smooth;
+}
+
 .progress-bar {
     position: fixed;
     top: 0;
@@ -7,3 +11,5 @@
     background: #2675FF;
     transform-origin: 0%;
   }
+
+

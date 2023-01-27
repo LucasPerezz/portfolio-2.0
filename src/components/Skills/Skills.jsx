@@ -1,4 +1,6 @@
 import React from "react";
+import { motion } from "framer-motion";
+import { useInView } from "react-intersection-observer";
 
 const Skills = () => {
   const languages = [
@@ -40,14 +42,25 @@ const Skills = () => {
     }
   ];
 
+  const {ref, inView} = useInView();
+
+
+
+
+
   return (
     <div className="min-h-screen relative" id="skills">
+      <motion.div 
+            initial={ inView ? { opacity: 0, scale: 0.5 } : {opacity: 0, scale: 0}}
+            animate={ inView ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0}}
+            transition={ inView ? { duration: 1.4} : {duration: 0}}
+          >
         <div className="min-h-screen container mx-auto my-auto flex flex-col justify-center mb-20">
       <h2 className="text-center text- font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2675FF] animate-pulse mb-16 ">
         SKILLS
       </h2>
 
-      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 w-3/4 place-items-center mx-auto gap-12 mt-20 ">
+      <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 w-3/4 place-items-center mx-auto gap-12 mt-20 " ref={ref}>
         {languages.map((language) => {
           return (
             <div className="w-max h-max p-2 hover:shadow-md rounded-xl hover:scale-105 hover:duration-500">
@@ -60,8 +73,8 @@ const Skills = () => {
           );
         })}
       </div>
-
         </div>
+      </motion.div>
     </div>
   );
 };

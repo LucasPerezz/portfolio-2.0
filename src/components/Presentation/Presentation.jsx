@@ -1,11 +1,25 @@
-import React from "react";
+import React, {useEffect} from "react";
 import Particle from "../Particle/Particle";
 import LINKEDIN from "../../assets/linkedin-logo.png";
 import GITHUB from "../../assets/gh-logo.png";
-import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
+import {useInView} from 'react-intersection-observer'
+
+
 
 const Presentation = () => {
+
+    const {ref, inView} = useInView();
+
+
+
+    useEffect(() => {
+      console.log("in view", inView)
+    }, [inView])
+
+    
+
+
   return (
     <>
       <div className="absolute top-0 -z-50">
@@ -14,12 +28,13 @@ const Presentation = () => {
       <div
         className="min-h-screen container w-10/12 lg:w-4/5 z-10 mx-auto relative"
         id="presentation"
+        ref={ref}
       >
         <div className="flex flex-col gap-3 justify-center min-h-screen text-justify">
-          <motion.div
-            initial={{ opacity: 0, scale: 0.5 }}
-            animate={{ opacity: 1, scale: 1 }}
-            transition={{ duration: 1.4}}
+          <motion.div 
+            initial={ inView ? { opacity: 0, scale: 0.5 } : {opacity: 0, scale: 0}}
+            animate={ inView ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0}}
+            transition={ inView ? { duration: 1.4} : {duration: 0}}
           >
             <p className="text-white text-2xl sm:text-3xl md:text-4xl lg:text-5xl xl:text-6xl 2xl:text-7xl font-bold">
               Lucas Tomas Perez

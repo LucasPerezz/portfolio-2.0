@@ -1,5 +1,7 @@
 import React from 'react'
 import Proyect from './Proyect'
+import { motion } from "framer-motion";
+import {useInView} from 'react-intersection-observer'
 
 const Portfolio = () => {
 
@@ -43,9 +45,15 @@ const Portfolio = () => {
         }
     ]
 
+    const {ref, inView} = useInView();
 
   return (
-    <div className='min-h-screen relative max-h-max'>
+    <div className='min-h-screen relative max-h-max' ref={ref}>
+        <motion.div 
+            initial={ inView ? { opacity: 0, scale: 0.5 } : {opacity: 0, scale: 0}}
+            animate={ inView ? { opacity: 1, scale: 1 } : {opacity: 0, scale: 0}}
+            transition={ inView ? { duration: 1.4} : {duration: 0}}
+          >
         <div className='min-h-screen container mx-auto my-auto flex flex-col justify-center mb-60'>
             <h2 className='text-center text- font-bold text-2xl sm:text-3xl md:text-4xl lg:text-5xl text-[#2675FF] animate-pulse mb-16'>Portfolio</h2>
             <div className='flex flex-col justify-center items-center gap-10 md:grid md:grid-cols-2 xl:grid-cols-3 container min-h-max'>
@@ -54,6 +62,7 @@ const Portfolio = () => {
                 })}
             </div>
         </div>
+    </motion.div>
     </div>
   )
 }
