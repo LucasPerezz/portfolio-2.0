@@ -9,7 +9,7 @@ const NavbarDesk = () => {
                 <li className='text-white'><a href="#presentation">Home</a></li>
                 <li className='text-white'><a href="#skills">Skills</a></li>
                 <li className='text-white'><a href="#proyects">Portfolio</a></li>
-                <li className='text-white'><a href="" download={''}>Download CV</a></li>
+                <li className='text-white'><a href="cv.pdf" download="cv.pdf">Download CV</a></li>
             </ul>
         </div>
     </div>
